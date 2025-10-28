@@ -5,16 +5,16 @@ import matplotlib.pyplot as plt
 t = 0.0
 x = 0.0
 y = 0.0
-v0 = 12
-angle = 50
+v0 = 5.729
+angle = 40
 v0x = 0.0
 v0y = 0.0
 ax = 0.0
 ay = -9.8
-delta_t = 0.2
+delta_t = 0.02
 
 dx = 0.0
-dy = 1.5
+dy = 1
 
 x_values = []
 y_values = []
@@ -63,7 +63,7 @@ plt.ylabel("y-position (m)")
 plt.tight_layout()
 plt.show()
 
-range_x = x_values[-1]
+range_x = x
 time_in_air = t_values[-1]
 max_height = max(y_values)
 
