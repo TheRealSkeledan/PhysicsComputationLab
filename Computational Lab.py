@@ -30,5 +30,39 @@ while y>=0:
   t_values.append(t)
   t = t + delta_t
 
-plt.plot(x_values,y_values)
+plt.figure(figsize=(12,4))
+
+plt.subplot(1,3,1)
+plt.plot(x_values, y_values)
+plt.title("Projectile Path (y vs x)")
+plt.xlabel("x-position (m)")
+plt.ylabel("y-position (m)")
+
+plt.subplot(1,3,2)
+plt.plot(t_values, x_values)
+plt.title("x-position vs Time")
+plt.xlabel("Time (s)")
+plt.ylabel("x-position (m)")
+
+plt.subplot(1,3,3)
+plt.plot(t_values, y_values)
+plt.title("y-position vs Time")
+plt.xlabel("Time (s)")
+plt.ylabel("y-position (m)")
+
+plt.tight_layout()
 plt.show()
+
+range_x = x_values[-1]
+time_in_air = t_values[-1]
+max_height = max(y_values)
+
+print(f"\nPredicted Range (m): {range_x:.2f}")
+print(f"Predicted Time in Air (s): {time_in_air:.2f}")
+print(f"Predicted Max Height (m): {max_height:.2f}")
+
+# Example:
+experimental_range = float(input("Measured (experimental) range (m): "))
+
+percent_error = abs((experimental_range - range_x) / range_x) * 100
+print(f"Percent error: {percent_error:.2f}%")
