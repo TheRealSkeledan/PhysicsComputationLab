@@ -13,6 +13,9 @@ ax = 0.0
 ay = -9.8
 delta_t = 0.2
 
+dx = 0.0
+dy = 1.5
+
 x_values = []
 y_values = []
 t_values = []
@@ -25,13 +28,13 @@ print("v0y = ", v0y)
 
 # Putting everything into the array
 while y>=0:
-  x = v0x*t + (0.5)*ax*t*t
-  y = v0y*t +(0.5)*ay*t*t
+  x = (v0x*t + (0.5)*ax*t*t) + dx
+  y = (v0y*t +(0.5)*ay*t*t) + dy
 
   x_values.append(x)
   y_values.append(y)
   t_values.append(t)
-  t = t + delta_t
+  t += delta_t
 
 plt.figure(figsize=(12,4))
 plt.style.use('seaborn-v0_8-darkgrid')
