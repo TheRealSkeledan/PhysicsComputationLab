@@ -34,6 +34,7 @@ while y>=0:
   t = t + delta_t
 
 plt.figure(figsize=(12,4))
+plt.style.use('seaborn-v0_8-darkgrid')
 
 # y vs x graph
 plt.subplot(1,3,1)
